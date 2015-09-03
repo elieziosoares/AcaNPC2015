@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>       <html class="no-js"> <![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>AcaNPC 2015 - Um Novo Mandamento vos dou</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet'>
+
+        
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/jquery-1.11.1.js"></script>
+        <script src="js/jquery-2.1.1.js"></script>
+        <script src="js/jquery.mask.min.js"></script>
+        <script src="js/acanpc.js"></script>
+    </head>
+    <body onLoad="onDocumentLoad()">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">Você está utilizando um navegador <strong>desatualizado</strong>. Por favor <a href="http://browsehappy.com/">atualize seu navegador</a> para melhorar sua experiência.</p>
+        <![endif]-->
+
+        <div class="header-container">
+            <header class="wrapper clearfix">
+                <!--<h1 class="title">AcaNPC 2015</h1>-->
+                <img class="logo" src="img/acanpc_solido.png" alt="Logo do Acampamento AcaNPC. Mostra uma mão segurando a frase AcaNPC 2015: Um novo mandamento vos dou.">
+            </header>
+        </div>
+
+        <div class="main-container" style="text-align: center;">
+            <div class="main wrapper clearfix" >
+                <a id="inscricao" href="#forminscricao">INSCREVA-SE!</a>
+                
+                <section id="forminscricao">
+                    <h2>Dados do Acampante:</h2>
+                    <form action="php/email.php" method="post">
+                        <label>Nome Completo: </label><input class="textfield" name="nome" type="text" placeholder="Nome" autofocus required>
+                        <label>E-mail: </label><input class="textfield" name="email" type="email" placeholder="E-mail" required>
+                        <label>Endereço: </label><input class="textfield" name="endereco" type="text" placeholder="Rua aaa, 00, Ribeira" autofocus required>
+                        <label>Telefone: </label><input class="textfield" name="telacampante" placeholder="(84)XXXX-XXXX" id="telacampante" type="text" maxlenght="15" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" autofocus required>
+
+                        <label>Data de Nascimento: </label><input class="textfield" name="dtnascimento" id="dtnascimento" type="text" autofocus required>
+                        <label>Nome do Responsável: </label><input class="textfield" name="responsavel" type="text" autofocus required>
+                        
+                        <label>Telefone do Responsável: </label><input class="textfield" name="telresponsavel" placeholder="(84)XXXX-XXXX" id="telresponsavel" type="text" maxlenght="15" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" autofocus required>
+                        
+                        
+                        <label>Toma medicamento?</label> <br/>
+                        <Label><input type="radio" name="medicamento" value="Sim" >Sim</label><br/>
+                        <label><input type="radio" name="medicamento" value="Nao" checked>Não</label>
+                        <br/>
+                        <label style="display:none;" id="medicamentoLabel">Medicamentos: </label><input class="textfield" style="display:none;" id="medicamentoInput" name="remedios" type="text" Placeholder="Insira aqui o(s) medicamento(s)." autofocus>
+
+                        <br/><br/>
+
+                        <input type="submit" value="Confirmar Inscrição" class="submit">  
+                    </form>
+                </section>
+            </div>
+        
+    </body>
+</html>
