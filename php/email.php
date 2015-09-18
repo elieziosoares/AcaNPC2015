@@ -9,7 +9,7 @@ $responsavel = htmlspecialchars(strip_tags($_POST['responsavel']));
 $telresponsavel = htmlspecialchars(strip_tags($_POST['telresponsavel']));
 $medicamentos = htmlspecialchars(strip_tags($_POST['remedios']));
 
-$refresh = '<meta http-equiv="refresh" content="1; url=../pagamento.html" />';
+$refresh = '<meta http-equiv="refresh" content="1; url=../index.html#confirmacao-inscricao" />';
 
  if ($nome != '' && $email != '' && $endereco != '' && $nascimento != '' && $responsavel != '' && $telresponsavel != '')
  {

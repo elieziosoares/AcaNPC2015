@@ -1,68 +1,315 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>       <html class="no-js"> <![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>AcaNPC 2015 - Um Novo Mandamento vos dou</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet'>
-
-        
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <script src="js/jquery-1.11.1.js"></script>
-        <script src="js/jquery-2.1.1.js"></script>
-        <script src="js/jquery.mask.min.js"></script>
-        <script src="js/acanpc.js"></script>
-    </head>
-    <body onLoad="onDocumentLoad()">
-        <!--[if lt IE 7]>
-            <p class="browsehappy">Você está utilizando um navegador <strong>desatualizado</strong>. Por favor <a href="http://browsehappy.com/">atualize seu navegador</a> para melhorar sua experiência.</p>
-        <![endif]-->
-
-        <div class="header-container">
-            <header class="wrapper clearfix">
-                <!--<h1 class="title">AcaNPC 2015</h1>-->
-                <img class="logo" src="img/acanpc_solido.png" alt="Logo do Acampamento AcaNPC. Mostra uma mão segurando a frase AcaNPC 2015: Um novo mandamento vos dou.">
-            </header>
-        </div>
-
-        <div class="main-container" style="text-align: center;">
-            <div class="main wrapper clearfix" >
-                <a id="inscricao" href="#forminscricao">INSCREVA-SE!</a>
-                
-                <section id="forminscricao">
-                    <h2>Dados do Acampante:</h2>
-                    <form action="php/email.php" method="post">
-                        <label>Nome Completo: </label><input class="textfield" name="nome" type="text" placeholder="Nome" autofocus required>
-                        <label>E-mail: </label><input class="textfield" name="email" type="email" placeholder="E-mail" required>
-                        <label>Endereço: </label><input class="textfield" name="endereco" type="text" placeholder="Rua aaa, 00, Ribeira" autofocus required>
-                        <label>Telefone: </label><input class="textfield" name="telacampante" placeholder="(84)XXXX-XXXX" id="telacampante" type="text" maxlenght="15" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" autofocus required>
-
-                        <label>Data de Nascimento: </label><input class="textfield" name="dtnascimento" id="dtnascimento" type="text" autofocus required>
-                        <label>Nome do Responsável: </label><input class="textfield" name="responsavel" type="text" autofocus required>
-                        
-                        <label>Telefone do Responsável: </label><input class="textfield" name="telresponsavel" placeholder="(84)XXXX-XXXX" id="telresponsavel" type="text" maxlenght="15" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" autofocus required>
-                        
-                        
-                        <label>Toma medicamento?</label> <br/>
-                        <Label><input type="radio" name="medicamento" value="Sim" >Sim</label><br/>
-                        <label><input type="radio" name="medicamento" value="Nao" checked>Não</label>
-                        <br/>
-                        <label style="display:none;" id="medicamentoLabel">Medicamentos: </label><input class="textfield" style="display:none;" id="medicamentoInput" name="remedios" type="text" Placeholder="Insira aqui o(s) medicamento(s)." autofocus>
-
-                        <br/><br/>
-
-                        <input type="submit" value="Confirmar Inscrição" class="submit">  
-                    </form>
-                </section>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <link rel="apple-touch-icon" sizes="57x57" href="files/images/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="files/images/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="files/images/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="files/images/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="files/images/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="files/images/favicons/apple-touch-icon-120x120.png">
+    <link rel="icon" type="image/png" href="files/images/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="files/images/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="files/images/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="files/images/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#771100">
+    <title>AcaNPC 2015 - Um novo mandamento vos dou</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700,600" type="text/css">
+    <link rel="stylesheet" href="css/main.min.css">
+  </head>
+  <body class="index">
+    <div class="hero">
+      <div class="hero-center"><img src="files/images/bg-hero.png" alt="Um novo mandamento vos dou - ACANPC 2015" class="hero-image"></div>
+      <div class="hero-ctas"><a href="#inscricao" class="btn js-go-to-target">Inscreva-se</a><a href="#pagamento" class="btn js-go-to-target">Realize o pagamento</a></div>
+    </div>
+    <nav class="main-nav">
+      <div class="container">
+        <ul class="menu">
+          <li class="menu-item"><a href="#sobre" class="menu-link">Sobre</a></li>
+          <li class="menu-item"><a href="#convidados" class="menu-link">Convidados</a></li>
+          <li class="menu-item"><a href="#informacoes" class="menu-link">Informações</a></li>
+        </ul><a href="#inscricao" class="join-link">Inscreva-se</a>
+      </div>
+    </nav>
+    <div class="event-info">
+      <ul class="info">
+        <li class="info-item">
+          <div class="fixed"><i class="info-icon -calendar"></i></div>
+          <div class="fluid">
+            <div class="inner info-content">
+              <p class="info-label">Quando</p>
+              <h2 class="info-text">3 a 6 de dez 2015</h2>
             </div>
-        
-    </body>
+          </div>
+        </li>
+        <li class="info-item">
+          <div class="fixed"><i class="info-icon -map-marker"></i></div>
+          <div class="fluid">
+            <div class="inner info-content">
+              <p class="info-label">Onde</p>
+              <h2 class="info-text">Tropical Eco Resort</h2>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <section id="sobre" class="section section-about">
+      <div class="container">
+        <h1 class="title"><span class="title-span">Um novo mandamento vos dou</span></h1>
+        <div class="row l-2-cols">
+          <div class="col-1-2">
+            <p>Em uma sociedade que exalta o indivíduo; em uma era em que o “eu” é o mais exaltado dos ídolos, vemos o cumprimento das palavras do mestre, que anunciou: “Por se multiplicar a injustiça, o amor de muitos se esfriará”. Dessa forma, vivemos imersos numa cultura de isolamento, em que cada um vive o vazio do seu próprio mundo, procurando, em vão, satisfação e felicidade.</p>
+            <p>Mas nós não estamos sozinhos. Somos chamados a uma nova vida, a uma nova consciência. O vazio da solidão é substituído pela convicção de que somos um só corpo em Jesus Cristo. O sangue que nos comprou selou a criação de uma família, em que o amor e a verdade são vividos todos os dias; em que os interesses e objetivos que temos não dizem respeito a nós mesmos. Renovados pela transformação do nosso entendimento, temos um novo propósito de vida. Firmes em um só espírito, buscamos viver plenamente o Novo Mandamento estabelecido pelo nosso Deus: “Amem-se uns aos outros como Eu vos amei”.</p>
+            <p>Neste 11º ACANPC, venha refletir conosco sobre esse novo mandamento que Cristo nos deu.</p>
+            <p>Esperamos tê-lo conosco!</p>
+          </div>
+          <div class="col-1-2">
+            <div class="video-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/J4tW6LqMrzA" frameborder="0" allowfullscreen></iframe></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="theme-verse">
+      <h1>Um novo mandamento vos dou: que vos amei uns aos outros; assim como eu vos amei a vós, que também vós vos ameis uns aos outros. Nisto conhecerão todos que sois meus discípulos, se tiverdes amor uns aos outros</h1>
+      <p>- João 13:34-35 -</p>
+    </div>
+    <section id="convidados" class="box-dark section section-speakers">
+      <div class="container">
+        <h1 class="title"><span class="title-span">Convidados</span></h1>
+        <div class="row speakers">
+          <div class="col-1-5 speaker"><a data-remodal-target="paulo-cappelletti" class="speaker-link"><img src="files/images/convidados/paulo.jpg" alt="" class="speaker-image"></a>
+            <h2 class="speaker-name"><a data-remodal-target="paulo-cappelletti" class="speaker-link">Paulo Cappelletti</a></h2>
+            <p class="speaker-info">Missão Sal (São Paulo/SP)</p>
+          </div>
+          <div class="col-1-5 speaker"><a data-remodal-target="bruno-jehu" class="speaker-link"><img src="files/images/convidados/bruno-jehu.jpg" alt="" class="speaker-image"></a>
+            <h2 class="speaker-name"><a data-remodal-target="bruno-jehu" class="speaker-link">Bruno Jehu</a></h2>
+            <p class="speaker-info">Igreja do Nazareno de Lagoa Nova (Natal/RN)</p>
+          </div>
+          <div class="col-1-5 speaker"><a data-remodal-target="jaime-farias" class="speaker-link"><img src="files/images/convidados/jaime.jpg" alt="" class="speaker-image"></a>
+            <h2 class="speaker-name"><a data-remodal-target="jaime-farias" class="speaker-link">Jaime Farias</a></h2>
+            <p class="speaker-info">Igreja Vitória Cristã (Natal/RN)</p>
+          </div>
+          <div class="col-1-5 speaker"><a class="speaker-link"><img src="files/images/convidados/homerson.jpg" alt="" class="speaker-image"></a>
+            <h2 class="speaker-name"><a class="speaker-link">Homerson Barrero</a></h2>
+            <p class="speaker-info">Comunidade Cristã Videira</p>
+          </div>
+          <div class="col-1-5 speaker"><a class="speaker-link"><img src="files/images/convidados/vanessa.jpg" alt="" class="speaker-image"></a>
+            <h2 class="speaker-name"><a class="speaker-link">Vanessa Laís</a></h2>
+            <p class="speaker-info">Igreja Cristã Bereiana</p>
+          </div>
+        </div>
+        <h2 class="title-smaller">Participações Especiais</h2>
+        <div class="row speakers-small">
+          <div class="col-1-6 speaker speaker-small"><img src="files/images/convidados/igor.jpg" alt="" class="speaker-image">
+            <h2 class="speaker-name">Igor Medeiros</h2>
+            <p class="speaker-info">Igreja do Nazareno</p>
+          </div>
+          <div class="col-1-6 speaker speaker-small"><img src="files/images/convidados/rui.jpg" alt="" class="speaker-image">
+            <h2 class="speaker-name">Rui Damasceno</h2>
+          </div>
+          <div class="col-1-6 speaker speaker-small"><img src="files/images/convidados/arthur.jpg" alt="" class="speaker-image">
+            <h2 class="speaker-name">Arthur Sena</h2>
+          </div>
+          <div class="col-1-6 speaker speaker-small"><img src="files/images/convidados/levi.jpg" alt="" class="speaker-image">
+            <h2 class="speaker-name">Miguel Levi</h2>
+          </div>
+          <div class="col-1-6 speaker speaker-small"><img src="files/images/convidados/fabio.jpg" alt="" class="speaker-image">
+            <h2 class="speaker-name">Fábio Lima</h2>
+            <p class="speaker-info">Igreja Oak Hills Refúgio da Graça</p>
+          </div>
+          <div class="col-1-6 speaker speaker-small"><img src="files/images/convidados/marconi.jpg" alt="" class="speaker-image">
+            <h2 class="speaker-name">Marconi</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="informacoes" class="section section-info">
+      <div class="container">
+        <h1 class="title"><span class="title-span">Informações</span></h1>
+        <h2 class="subtitle">Local</h2><img src="files/images/logo-tropical.png" alt="logo Tropical Eco Resort" class="logo-tropical">
+        <p>Localizado em São José de Mipibu, a 14 km de Natal, o Tropical Eco Resort é o primeiro eco resort da região, oferecendo aos seus visitantes uma única e incrível experiência, em 20 hectares de beleza natural. Conforto e diversão dividem o mesmo espaço e a fauna e flora, em harmonia, te convidam para viver aventuras inesquecíveis em meio a natureza.</p>
+        <p>As águas cristalinas do rio Taborda e a mata exuberante ao redor do Tropical Eco Resort apresentam aos amantes da natureza um lugar ideal para se divertir e relaxar com as diversas opções de lazer oferecidas. Com tirolesa, passeios de pedalinho, caiaque e charrete, trilha, ecológica, ponte baiana, piscinas adulto e infantil, campo de futebol, quadra de tênis, salão de jogos, playground e muito mais, lá, a diversão e bem-estar se encontram de forma perfeita.</p>
+        <div class="resort-photos">
+          <div class="resort-photo"><img src="files/images/tropical-eco-resort/1.jpg" alt=""></div>
+          <div class="resort-photo"><img src="files/images/tropical-eco-resort/2.jpg" alt=""></div>
+          <div class="resort-photo"><img src="files/images/tropical-eco-resort/3.jpg" alt=""></div>
+          <div class="resort-photo"><img src="files/images/tropical-eco-resort/4.jpg" alt=""></div>
+          <div class="resort-photo"><img src="files/images/tropical-eco-resort/5.jpg" alt=""></div>
+        </div><a href="http://www.tropicalecoresort.com.br/" target="_blank" class="more-info">Mais Informações</a>
+        <h2 class="subtitle">Inscrição</h2>
+        <div class="entry-box"><img src="files/images/icon-ticket.png" alt="">
+          <ul class="services-list">
+            <li>Inclui alimentação</li>
+            <li>Inclui hospedagem</li>
+            <li>Inclui transporte</li>
+            <li>Inscrição Individual</li>
+          </ul>
+          <ul class="price-list">
+            <li>
+              <h3>R$ 230,00</h3>
+              <p>( à vista )</p>
+            </li>
+            <li>
+              <h3>R$ 240,00</h3>
+              <p>( a prazo pelo PagSeguro )</p>
+            </li>
+          </ul><a href="#" class="btn js-go-to-enrollment">Inscreva-se</a>
+        </div>
+      </div>
+    </section>
+    <section id="inscricao" class="box-dark">
+      <div class="inner">
+        <div class="container enrollment">
+          <h1 class="title"><span class="title-span">Inscreva-se</span></h1>
+          <h2 class="callout">Participe do melhor AcaNPC< de todos os tempos!</h2>
+          <form action="php/email.php" method="post" data-parsley-validate class="row form-default">
+            <div class="form-group">
+              <div class="row col-large-sm">
+                <fieldset class="col-1-3 form-default__fieldset">
+                  <label for="nome" class="form-default__label">Nome:</label>
+                  <input type="text" id="nome" name="nome" placeholder="p. ex.: José Potiguar" required minlength="3" maxlength="120" class="form-default__text">
+                </fieldset>
+                <fieldset class="col-1-3 form-default__fieldset">
+                  <label for="email" class="form-default__label">E-mail:</label>
+                  <input type="email" id="email" name="email" placeholder="p. ex.: jose@potiguar.com.br" required class="form-default__text">
+                </fieldset>
+                <fieldset class="col-1-3 form-default__fieldset">
+                  <label for="endereco" class="form-default__label">Endereço:</label>
+                  <input type="text" id="endereco" name="endereco" placeholder="p. ex.: Rua Itaborã, 007, Lagoa Nova" required minlength="10" maxlength="200" class="form-default__text">
+                </fieldset>
+              </div>
+              <div class="row col-1-2-md">
+                <fieldset class="col-1-3 form-default__fieldset">
+                  <label for="telacampante" class="form-default__label">Telefone:</label>
+                  <input type="text" id="telacampante" name="telacampante" placeholder="p. ex.: (84) 98888-8888" required minlength="14" maxlength="15" class="form-default__text js-phone-number">
+                </fieldset>
+                <fieldset class="col-1-3 form-default__fieldset">
+                  <label for="dtnascimento" class="form-default__label">Data de Nascrimento:</label>
+                  <input type="text" id="dtnascimento" name="dtnascimento" placeholder="p. ex.: 01/01/1995" required class="form-default__text js-date">
+                </fieldset>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row col-1-2-md">
+                <fieldset class="col-1-3 form-default__fieldset">
+                  <label for="responsavel" class="form-default__label">Nome do Responsável:</label>
+                  <input type="text" id="responsavel" name="responsavel" placeholder="p. ex.: Zé Potiguar" required minlength="3" maxlength="120" class="form-default__text">
+                </fieldset>
+                <fieldset class="col-1-3 form-default__fieldset">
+                  <label for="telresponsavel" class="form-default__label">Telefone do Responsável:</label>
+                  <input type="text" id="telresponsavel" name="telresponsavel" placeholder="p. ex.: (84) 98888-8888" required minlength="14" maxlength="15" class="form-default__text js-phone-number">
+                </fieldset>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row col-1-2-md">
+                <fieldset class="col-1-3 form-default__fieldset">
+                  <label for="medicamento" class="form-default__label">Toma algum medicamento?</label>
+                  <div class="row">
+                    <div class="form-default__fixed">
+                      <label class="form-default__radio">
+                        <input type="radio" name="medicamento" value="Sim">Sim
+                      </label>
+                      <label class="form-default__radio">
+                        <input type="radio" name="medicamento" value="Não">Não
+                      </label>
+                    </div>
+                    <div class="form-default__fluid">
+                      <div class="inner">
+                        <input type="text" id="remedios" name="remedios" placeholder="Qual?" class="form-default__text">
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+            <input type="submit" value="Confirmar Inscrição" class="form-default__submit">
+          </form>
+        </div>
+      </div>
+    </section>
+    <section id="pagamento" class="section section-info">
+      <div class="container">
+        <h1 class="title"><span class="title-span">Realize o pagamento</span></h1>
+        <div class="row l-2-cols">
+          <div class="col-1-2">
+            <h2 class="subtitle">À Vista</h2>
+            <p>O pagamento à vista no valor de <b class="text-marked">R$ 230,00</b> deverá ser efetuado <b class="text-marked">em espécie</b> diretamente com a equipe do NpC< ou por meio de <b class="text-marked">depósito/transferência</b> na conta informada abaixo. Caso opte por depósito/transferência, você pode confirmar sua inscrição enviando o comprovante para o e-mail <b class="text-marked">mail@npcoficial.com</b> juntamente com seu nome completo no assunto.</p>
+            <p><b>Banco do Brasil<br>AG 1533-4<br>C/C 42545-1<br>VITOR TRIGUEIRO AZEVEDO</b></p>
+          </div>
+          <div class="col-1-2">
+            <h2 class="subtitle">A Prazo</h2>
+            <p>O pagamento a prazo no valor de <b class="text-marked">R$ 240,00</b> deverá ser efetuado via <b class="text-marked">PagSeguro</b> por meio do link abaixo.
+              <form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post" class="t-center">
+                <input type="hidden" name="code" value="CB4E67E264647BF444452FB1C4E9FF58">
+                <input type="image" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/pagamentos/120x53-pagar-preto.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!">
+              </form>
+            </p><small>* A compra parcelada será acrescida de taxas pelo sistema de pagamento.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div data-remodal-id="modal" class="remodal">
+      <button data-remodal-action="close" class="remodal-close"></button>
+      <h1>Remodal</h1>
+      <p>Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.</p><br>
+      <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
+      <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
+    </div>
+    <div data-remodal-id="paulo-cappelletti" class="remodal modal">
+      <header class="modal__header">
+        <h1 class="modal__title">Paulo Cappelletti</h1>
+        <button data-remodal-action="close" class="remodal-close modal__close"></button>
+      </header>
+      <div class="modal__content">
+        <p> É pastor e fundador da Missão Sal (São Paulo/SP), além de ser uma das principais referências do movimento Missão Na Íntegra. Possui mestrado em Ciências da Religião e atualmente é professor da Faculdade Latino Americana de Missão e da Faculdade Teológica Sul Americana.</p>
+      </div>
+    </div>
+    <div data-remodal-id="bruno-jehu" class="remodal modal">
+      <header class="modal__header">
+        <h1 class="modal__title">Bruno Jehu</h1>
+        <button data-remodal-action="close" class="remodal-close modal__close"></button>
+      </header>
+      <div class="modal__content">
+        <p> É pastor de jovens e adolescentes da Igreja do Nazareno de Lagoa Nova (Natal/RN). Com seu estilo sempre descontraído de comunicar a mensagem, BJ impactou a vida de todos os que estavam no AcaNpC< 2014, testemunhando a respeito do que Deus vem realizando em sua vida e ministério.</p>
+      </div>
+    </div>
+    <div data-remodal-id="jaime-farias" class="remodal modal">
+      <header class="modal__header">
+        <h1 class="modal__title">Jaime Farias</h1>
+        <button data-remodal-action="close" class="remodal-close modal__close"></button>
+      </header>
+      <div class="modal__content">
+        <p> É presbítero da Igreja Vitória Cristã (Natal/RN) e referência em liderança de jovens e adolescentes em nossa cidade. Com suas ministrações nada convencionais, ele foi responsável por conduzir momentos diferenciados e extremamente especiais em várias edições do AcaNpC<.</p>
+      </div>
+    </div>
+    <div data-remodal-id="confirmacao-inscricao" class="remodal modal js-modal-join">
+      <header class="modal__header">
+        <h1 class="modal__title">Sua inscrição foi registrada!</h1>
+        <button data-remodal-action="close" class="remodal-close modal__close"></button>
+      </header>
+      <div class="modal__content">
+        <div class="t-center">
+          <p>Clique no botão abaixo para confirmar sua inscrição.</p><a href="#" data-remodal-action="confirm" class="btn">Confirmar Inscrição</a>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <h2 class="subtitle">Realização</h2><img src="files/images/logo-npc.png" alt="logo NPC - Natal para Cristo" class="logo-npc">
+      <h3>NPC - Natal Para Cristo</h3>
+      <p>Conecte-se conosco</p>
+      <ul class="social-list">
+        <li><a href="https://www.facebook.com/OficialNPC"><svg enable-background="new 0 0 56.693 56.693" height="56.693px" id="Layer_1" version="1.1" viewBox="0 0 56.693 56.693" width="56.693px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M40.43,21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,5.395,0V6.125l-7.43-0.029  c-8.248,0-10.125,6.174-10.125,10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,0-13.32,0-24.137h6.77  L40.43,21.739z"/></svg></a></li>
+        <li><a href="https://instagram.com/npcoficial/"><svg enable-background="new 0 0 56.693 56.693" height="56.693px" id="Layer_1" version="1.1" viewBox="0 0 56.693 56.693" width="56.693px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M43.414,4.831H13c-5.283,0-9.581,4.297-9.581,9.58v10.12v20.295c0,5.283,4.298,9.58,9.581,9.58h30.415  c5.283,0,9.58-4.297,9.58-9.58V24.53v-10.12C52.994,9.127,48.697,4.831,43.414,4.831z M46.162,10.544l1.096-0.004v1.091v7.312  l-8.375,0.027l-0.029-8.402L46.162,10.544z M21.131,24.53c1.588-2.197,4.164-3.638,7.076-3.638s5.488,1.441,7.074,3.638  c1.033,1.434,1.652,3.188,1.652,5.088c0,4.811-3.918,8.725-8.727,8.725c-4.812,0-8.726-3.914-8.726-8.725  C19.481,27.718,20.098,25.964,21.131,24.53z M48.164,44.825c0,2.621-2.131,4.75-4.75,4.75H13c-2.62,0-4.751-2.129-4.751-4.75V24.53  h7.4c-0.639,1.572-0.998,3.289-0.998,5.088c0,7.473,6.08,13.557,13.556,13.557c7.475,0,13.555-6.084,13.555-13.557  c0-1.799-0.361-3.516-1-5.088h7.402V44.825z"/></svg></a></li>
+        <li><a href="https://www.youtube.com/user/OficialNpC" class="youtube"><svg height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg"><path d="M-838-2232H562v3600H-838z" fill="none"/><path d="M16 10v28l22-14z"/><path d="M0 0h48v48H0z" fill="none"/></svg></a></li>
+      </ul>
+    </footer>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
 </html>
