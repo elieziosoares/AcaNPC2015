@@ -2565,71 +2565,37 @@ small {
       margin-right: 0; } }
 
 @media screen and (max-width: 50em) {
-  .speakers .col-1-5 {
-    float: left;
-    display: block;
-    margin-right: 1.69492%;
-    width: 32.20339%;
-    margin-bottom: 20px; }
-    .speakers .col-1-5:last-child {
-      margin-right: 0; }
-    .speakers .col-1-5:nth-child(5n) {
-      margin-right: 1.69492%; }
-    .speakers .col-1-5:nth-child(5n+1) {
-      clear: none; }
-    .speakers .col-1-5:nth-child(3n) {
-      margin-right: 0; }
-    .speakers .col-1-5:nth-child(3n+1) {
-      clear: left; } }
-@media screen and (max-width: 30em) {
-  .speakers .col-1-5 {
-    float: left;
-    display: block;
-    margin-right: 1.69492%;
-    width: 49.15254%; }
-    .speakers .col-1-5:last-child {
-      margin-right: 0; }
-    .speakers .col-1-5:nth-child(3n) {
-      margin-right: 1.69492%; }
-    .speakers .col-1-5:nth-child(3n+1) {
-      clear: none; }
-    .speakers .col-1-5:nth-child(2n) {
-      margin-right: 0; }
-    .speakers .col-1-5:nth-child(2n+1) {
-      clear: left; } }
-
-@media screen and (max-width: 50em) {
-  .speakers-small .col-1-6 {
+  .speakers .col-1-6, .speakers-small .col-1-6 {
     float: left;
     display: block;
     margin-right: 1.69492%;
     width: 23.72881%;
     margin-bottom: 20px; }
-    .speakers-small .col-1-6:last-child {
+    .speakers .col-1-6:last-child, .speakers-small .col-1-6:last-child {
       margin-right: 0; }
-    .speakers-small .col-1-6:nth-child(6n) {
+    .speakers .col-1-6:nth-child(6n), .speakers-small .col-1-6:nth-child(6n) {
       margin-right: 1.69492%; }
-    .speakers-small .col-1-6:nth-child(6n+1) {
+    .speakers .col-1-6:nth-child(6n+1), .speakers-small .col-1-6:nth-child(6n+1) {
       clear: none; }
-    .speakers-small .col-1-6:nth-child(4n) {
+    .speakers .col-1-6:nth-child(4n), .speakers-small .col-1-6:nth-child(4n) {
       margin-right: 0; }
-    .speakers-small .col-1-6:nth-child(4n+1) {
+    .speakers .col-1-6:nth-child(4n+1), .speakers-small .col-1-6:nth-child(4n+1) {
       clear: left; } }
 @media screen and (max-width: 30em) {
-  .speakers-small .col-1-6 {
+  .speakers .col-1-6, .speakers-small .col-1-6 {
     float: left;
     display: block;
     margin-right: 1.69492%;
-    width: 32.20339%; }
-    .speakers-small .col-1-6:last-child {
+    width: 49.15254%; }
+    .speakers .col-1-6:last-child, .speakers-small .col-1-6:last-child {
       margin-right: 0; }
-    .speakers-small .col-1-6:nth-child(4n) {
+    .speakers .col-1-6:nth-child(4n), .speakers-small .col-1-6:nth-child(4n) {
       margin-right: 1.69492%; }
-    .speakers-small .col-1-6:nth-child(4n+1) {
+    .speakers .col-1-6:nth-child(4n+1), .speakers-small .col-1-6:nth-child(4n+1) {
       clear: none; }
-    .speakers-small .col-1-6:nth-child(3n) {
+    .speakers .col-1-6:nth-child(2n), .speakers-small .col-1-6:nth-child(2n) {
       margin-right: 0; }
-    .speakers-small .col-1-6:nth-child(3n+1) {
+    .speakers .col-1-6:nth-child(2n+1), .speakers-small .col-1-6:nth-child(2n+1) {
       clear: left; } }
 
 @media screen and (max-width: 30em) {
